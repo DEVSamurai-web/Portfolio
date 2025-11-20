@@ -1,0 +1,276 @@
+/* Minimalista premium + toques visuais */
+:root{
+  --bg-1:#0b0c0d;
+  --bg-2:#0f1113;
+  --panel: #121416;
+  --muted:#9aa4ac;
+  --accent:#5de1ff;
+  --accent-dark:#0ca8bf;
+  --glass: rgba(255,255,255,0.03);
+}
+
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  color:#e9f4fb;
+  -webkit-font-smoothing:antialiased;
+  padding:28px 18px;
+}
+
+/* Site grid */
+.site{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-rows: auto 1fr;
+  gap:24px;
+}
+
+/* HERO */
+.hero{
+  position:relative;
+}
+.hero-inner{
+  display:flex;
+  gap:28px;
+  align-items:flex-start;
+  justify-content:space-between;
+}
+.hero-left{
+  flex:1;
+  padding:28px;
+}
+.hero-left h1{
+  font-size:34px;
+  line-height:1.04;
+  margin-bottom:10px;
+}
+.name-highlight{
+  background: linear-gradient(90deg, rgba(93,225,255,0.14), rgba(92,160,255,0.08));
+  padding:6px 10px;
+  border-radius:8px;
+  color:var(--accent);
+}
+.lead{ color:var(--muted); margin-bottom:16px; }
+
+/* profile card */
+.profile-card{
+  width:320px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.005));
+  border-radius:16px;
+  padding:20px;
+  box-shadow: 0 18px 50px rgba(3,7,18,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+.avatar-wrap{
+  width:130px;height:130px;border-radius:18px;overflow:hidden;
+  padding:6px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+  border:1px solid rgba(255,255,255,0.03);
+}
+.avatar{width:100%;height:100%;object-fit:cover;display:block;border-radius:12px}
+.pc-name{font-size:18px;color:#fff;margin-top:6px}
+.pc-role{font-size:13px;color:var(--muted);margin-bottom:6px}
+.pc-info{width:100%;display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.pc-info div{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;padding:8px;border-radius:8px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
+.pc-socials{display:flex;gap:10px;margin-top:6px}
+.pc-socials a{padding:8px 10px;border-radius:8px;background:transparent;border:1px dashed rgba(255,255,255,0.02);text-decoration:none;color:var(--muted);font-size:13px}
+
+/* CTA buttons */
+.btn{display:inline-block;text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:600}
+.primary{background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:#032024}
+.ghost{border:1px solid rgba(255,255,255,0.04);color:var(--muted);background:transparent}
+.outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+/* hero decor */
+.hero-decor{
+  position:absolute;right:0;top:-10px;width:360px;height:140px;
+  background: radial-gradient(circle at 30% 30%, rgba(93,225,255,0.06), transparent 20%),
+              radial-gradient(circle at 80% 80%, rgba(92,160,255,0.04), transparent 20%);
+  filter: blur(18px);
+  transform: translateX(40px);
+  pointer-events:none;
+}
+
+/* CONTENT area */
+.content{display:grid;grid-template-columns: 1fr 360px;gap:20px}
+.card{background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);box-shadow: 0 12px 30px rgba(2,6,23,0.5)}
+.about p{color:var(--muted);line-height:1.6}
+
+/* skills */
+.skills .skill{margin-bottom:12px}
+.skill label{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}
+.bar{height:10px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden}
+.bar > div{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-dark));border-radius:999px}
+
+/* projects */
+.projects .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.project{padding:14px;border-radius:10px;display:flex;flex-direction:column;gap:10px}
+.project h4{margin:0;color:#fff}
+.project p{color:var(--muted);font-size:13px}
+.proj-actions{margin-top:auto}
+
+/* footer */
+.footer{text-align:center;color:var(--muted);font-size:13px;margin-top:6px}
+
+/* Responsive */
+@media (max-width:1000px){
+  .hero-inner{flex-direction:column;align-items:stretch}
+  .profile-card{width:100%;order:2}
+  .hero-left{order:1}
+  .content{grid-template-columns: 1fr; }
+}
+/* ===============================
+   🔥 FUNDO COM GRADIENTE + BLOBS
+   =============================== */
+
+body {
+  background: radial-gradient(circle at 20% 20%, rgba(0, 200, 255, 0.14), transparent 60%),
+              radial-gradient(circle at 80% 20%, rgba(140, 0, 255, 0.12), transparent 60%),
+              linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Blobs principais */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  filter: blur(180px);
+  opacity: 0.25;
+  z-index: -1;
+  animation: moveBlobs 22s infinite ease-in-out alternate;
+}
+
+/* Blob azul */
+body::before {
+  background: #00c3ff;
+  top: -180px;
+  left: -140px;
+}
+
+/* Blob roxo */
+body::after {
+  background: #7a00ff;
+  bottom: -200px;
+  right: -160px;
+  animation-delay: 4s;
+}
+
+/* Animação suave */
+@keyframes moveBlobs {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(80px, -60px) scale(1.18);
+  }
+  100% {
+    transform: translate(-60px, 40px) scale(1);
+  }
+}
+/* ===========================================
+   🔥 EFEITO GRAIN (TEXTURA CINEMATIC)
+   =========================================== */
+
+body::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.18;
+  z-index: 2; /* Acima do fundo, abaixo do conteúdo */
+  background-image: url('grain.png');
+  mix-blend-mode: overlay;
+}
+
+/* Caso você não tenha a imagem grain, pode usar este CSS puro:
+body::after {
+  background-image: 
+     url('https://i.pinimg.com/736x/f8/5d/7a/f85d7a23af7672677d2e174a1dee31ea.jpg');
+}
+*/
+
+
+/* ===========================================
+   🔥 NEON SUAVE NOS CARDS
+   =========================================== */
+
+.card,
+.profile-card {
+  box-shadow:
+    0 0 18px rgba(93, 225, 255, 0.06),
+    0 0 40px rgba(92, 160, 255, 0.03);
+  transition: box-shadow 0.4s ease;
+}
+
+.card:hover,
+.profile-card:hover {
+  box-shadow:
+    0 0 22px rgba(93, 225, 255, 0.18),
+    0 0 55px rgba(92, 160, 255, 0.12);
+}
+
+
+/* ===========================================
+   🔥 NEON SUAVE NOS BOTÕES
+   =========================================== */
+
+.btn.primary {
+  box-shadow: 0 0 14px rgba(93, 225, 255, 0.25);
+}
+.btn.primary:hover {
+  box-shadow: 
+    0 0 22px rgba(93, 225, 255, 0.35),
+    0 0 40px rgba(92, 160, 255, 0.25);
+}
+
+.btn.ghost:hover,
+.btn.outline:hover {
+  box-shadow: 0 0 16px rgba(93, 225, 255, 0.2);
+}
+
+
+/* ===========================================
+   🔥 NEON EM VOLTA DO AVATAR
+   =========================================== */
+
+.avatar-wrap {
+  box-shadow: 0 0 22px rgba(93, 225, 255, 0.25);
+  transition: 0.4s ease;
+}
+
+.avatar-wrap:hover {
+  box-shadow: 
+    0 0 40px rgba(93, 225, 255, 0.45),
+    0 0 70px rgba(92, 160, 255, 0.28);
+}
+/* ====== Grain Background ====== */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/mnt/data/grain.jpeg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.12; /* ajuste entre 0.05 e 0.20 */
+    pointer-events: none;
+    z-index: -1; 
+    mix-blend-mode: overlay; /* deixa o grain mais natural */
+}
