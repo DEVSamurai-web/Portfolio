@@ -290,4 +290,24 @@ body::before {
   font-size: 26px;
   margin-right: 8px;
   color: #00c3ff;
+}/* Ícones nas Skills */
+.skills i {
+  font-size: 24px;
+  margin-right: 6px;
+  color: var(--accent);
+  vertical-align: middle;
 }
+.skill label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.skills i {
+  transition: 0.3s ease;
+}
+
+.skills i:hover {
+  transform: scale(1.25);
+  color: #5de1ff;
+}
+
