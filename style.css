@@ -274,3 +274,14 @@ body::before {
     z-index: -1; 
     mix-blend-mode: overlay; /* deixa o grain mais natural */
 }
+.pc-stack {
+  display: flex;
+  gap: 18px;        /* mais espaçamento entre ícones */
+  margin: 15px 0 25px;
+  align-items: center;
+}
+
+.stack-icon {
+  width: 70px;      /* tamanho atualizado */
+  height: 70px;
+}
