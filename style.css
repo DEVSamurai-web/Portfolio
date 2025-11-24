@@ -285,3 +285,9 @@ body::before {
   width: 70px;      /* tamanho atualizado */
   height: 70px;
 }
+/* Ícones nas Skills */
+.skills i {
+  font-size: 26px;
+  margin-right: 8px;
+  color: #00c3ff;
+}
